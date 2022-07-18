@@ -43,7 +43,7 @@
     <pre><code>&lt;iframe src=&quot;https://example.com/reviews-widget?APP_ID=XXXXXXX&quot;&gt;&lt;/iframe&gt;<br>&lt;script src=&quot;https://example.com/reviews.js&quot;&gt;&lt;/script&gt;</code></pre>
 
 
-    <h3 class="gradient-text" style="margin-bottom: 10px; margin-top: 30px">And latest reviews show up:</h3>
+    <h3 class="gradient-text" style="margin-bottom: 10px; margin-top: 30px">And latest 5⭐️ reviews show up:</h3>
     <section>
         <div id="reviewsContainer">
 
@@ -103,6 +103,7 @@
         </div>
         <p class="review-text"></p>
         <p class="review-by">&mdash;<span class="review-author"></span></p>
+        <p class="review-timestamp"></p>
     </div>
 </template>
 
@@ -154,6 +155,8 @@
         reviewNode.querySelector(".review-author").textContent = review.name;
         reviewNode.querySelector(".review-text").textContent = review.text;
         reviewNode.querySelector(".review-title").textContent = review.title;
+
+        reviewNode.querySelector(".review-timestamp").textContent = new Date().toLocaleDateString();
 
         reviewsContainer.appendChild(reviewNode);
     });

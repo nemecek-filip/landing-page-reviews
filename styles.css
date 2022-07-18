@@ -224,10 +224,16 @@ img {
     margin-bottom: 10px;
 }
 
-.review-card .review-by {
+.review-card .review-by
+ {
     margin-top: auto;
     text-align: right;
     font-size: 0.8rem;
+}
+
+.review-card .review-timestamp {
+    font-size: 0.7rem;
+    text-align: right;
 }
 
 .review-stars {
