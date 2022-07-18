@@ -19,7 +19,6 @@
     <meta property="og:url" content="https://reviews.filipnemecek.com">
 
 
-
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="App Store reviews on YOUR landing page"/>
     <meta name="twitter:description"
@@ -31,17 +30,31 @@
 </head>
 <body>
 
-<main class="main-container">
-    <svg class="watermark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+<main class="main-container prose">
+    <svg class="watermark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+    </svg>
 
     <h1 class="main-headline">App Store reviews<br>on <i>your</i> landing page</h1>
 
-    <p class="lead-text">Showcase positive reviews for your app to build trust and increase downloads. The setup will take just a few minutes to get started.</p>
+    <p class="lead-text"></p>
+
+    <h3 class="gradient-text" style="margin-bottom: 0">Two lines of code..</h3>
+    <pre><code>&lt;iframe src=&quot;https://example.com/reviews-widget?APP_ID=XXXXXXX&quot;&gt;&lt;/iframe&gt;<br>&lt;script src=&quot;https://example.com/reviews.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+    <h3 class="gradient-text" style="margin-bottom: 10px; margin-top: 30px">And latest reviews show up:</h3>
+    <section>
+        <div id="reviewsContainer">
+
+        </div>
+    </section>
 
     <section class="cta-section">
         <div class="pattern-element pattern1 faint-pattern"></div>
 
         <h3>Interested? <span class="gradient-text">Join the waitlist!</span></h3>
+        <p>No spam. Only info related to this project.</p>
 
         <a class="cta-button" href="https://forms.gle/9eLDyPNsWQzpf19w6" target="_blank">Sign me up!</a>
     </section>
@@ -62,13 +75,89 @@
         </ul>
     </section>
 
-    <section class="example-section">
-        <h2>Example</h2>
-        <p>The reviews will look something like this. See <a href="https://switchbuddy.app" target="_blank">SwitchBuddy.app</a> for live version.</p>
-
-        <img src="reviews-example.png" width="1104" height="540" loading="lazy" alt="Example screenshot">
+    <section class="about">
+        <h3>By <a target="_blank" href="https://nemecek.be">Filip Němeček</a></h3>
     </section>
+
 </main>
+
+<template id="reviewCard">
+    <div class="review-card subtle-shadow">
+        <span class="review-title"></span>
+        <div class="review-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+        </div>
+        <p class="review-text"></p>
+        <p class="review-by">&mdash;<span class="review-author"></span></p>
+    </div>
+</template>
+
+<script>
+    const reviews = [
+        {
+            'name': "Alex2970686",
+            'text': "Works great with my Switch. A must-have!",
+            'title': "Works great!"
+        },
+        {
+            'name': "2adorable",
+            'text': "• Super easy to use! • Easy / intuitive app navigation • Delightfully quick save / sharing feature • Tell your neighbors!",
+            'title': "🔥🔥🔥🔥🔥"
+        },
+        {
+            'name': "BlackChocobo16",
+            'title': "A must have for Switch owners",
+            'text': "Nintendo’s way of sending screenshots to mobile is very… weird but this app makes it way better!!"
+        },
+        {
+            'name': "HonestReview85",
+            'title': "Should be a Switch Online App feature. it’s THAT good!",
+            'text': "nothing much to it, but the app is simple and sweet and makes transferring media that much easier. 100% recommend."
+        },
+        {
+            'name': "Jake5537",
+            'title': "5 out of 5",
+            'text': "Must have for switch owners"
+        },
+        {
+            'name': "Miranda Arocho",
+            'title': "such a time saver",
+            'text': "amazing app! so easy & fast. uploads the screenshots straight to your phone. if you’re having problems w/ the app, try updating it; I was having some glitch issues following the first download but noticed it required an extra update.\n" +
+                "\n"
+        },
+    ]
+
+    const reviewTemplate = document.getElementById("reviewCard");
+    const reviewsContainer = document.getElementById("reviewsContainer");
+
+    const shuffledReviews = reviews.map(value => ({value, sort: Math.random()}))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({value}) => value)
+
+    shuffledReviews.forEach((review) => {
+        const reviewNode = reviewTemplate.content.cloneNode(true);
+
+        reviewNode.querySelector(".review-author").textContent = review.name;
+        reviewNode.querySelector(".review-text").textContent = review.text;
+        reviewNode.querySelector(".review-title").textContent = review.title;
+
+        reviewsContainer.appendChild(reviewNode);
+    });
+</script>
 
 </body>
 </html>
