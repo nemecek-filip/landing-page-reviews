@@ -144,9 +144,6 @@ p.lead-text {
     font-weight: bolder;
     text-decoration: none;
     display: inline-block;
-    animation: pulse 1s ease-in-out infinite;
-    -moz-animation: pulse 1s ease-in-out infinite;
-    -webkit-animation: pulse 1s ease-in-out infinite;
     margin-bottom: 0;
 }
 
